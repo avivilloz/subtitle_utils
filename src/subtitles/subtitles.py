@@ -89,13 +89,3 @@ def get_subtitle_lines(
 
 def format_word(word: str) -> str:
     return re.sub(r"[;,.]", "", word).upper()
-
-
-# Example usage
-if __name__ == "__main__":
-    audio_path = "/home/deck/git/subtitles/audio.wav"
-    sections = get_subtitle_words(audio_path)
-    lines = get_subtitle_lines(sections)
-
-    for line in lines:
-        print(f"{line.start:.2f} - {line.end:.2f}: {line.text}")
