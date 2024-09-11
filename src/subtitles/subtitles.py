@@ -57,9 +57,9 @@ def get_subtitle_lines(
     line_text = ""
 
     for section in sections:
-        temp_line_text = f"{line_text} {section.text}".strip()
+        line_text = f"{line_text} {section.text}".strip()
 
-        if len(temp_line_text) > max_chars and current_line:
+        if current_line and len(line_text) > max_chars:
             lines.append(
                 SubtitleLine(
                     sections=current_line,
@@ -70,10 +70,9 @@ def get_subtitle_lines(
             if current_line[-1].end == section.start:
                 section.start += lines_distance
             current_line = []
-            line_text = ""
+            line_text = section.text
 
         current_line.append(section)
-        line_text = temp_line_text
 
     if current_line:
         lines.append(
@@ -88,4 +87,4 @@ def get_subtitle_lines(
 
 
 def format_word(word: str) -> str:
-    return re.sub(r"[;,.]", "", word).upper()
+    return re.sub(r"[;,.]", "", word).upper().strip()
