@@ -1,4 +1,4 @@
-# Subtitles
+# Easy Subtitles
 
 This Python package uses the Whisper model to transcribe audio files and generate structured subtitles. It processes the transcription into word-level and line-level subtitle objects, allowing for flexible subtitle creation and manipulation.
 
@@ -22,13 +22,13 @@ This package is ideal for developers and content creators who need to generate a
 Run the following command in your python venv:
 
 ```sh
-pip install git+https://github.com/avivilloz/subtitles.git@main#egg=subtitles
+pip install git+https://github.com/avivilloz/easysub.git@main#egg=easysub
 ```
 
 Or add the following line to your project's `requirement.txt` file:
 
 ```
-git+https://github.com/avivilloz/subtitles.git@main#egg=subtitles
+git+https://github.com/avivilloz/easysub.git@main#egg=easysub
 ```
 
 And run the following command:
@@ -40,7 +40,7 @@ pip install -r requirements.txt
 ## How to use:
 
 ```python
-from subtitles import get_subtitle_words, get_subtitle_lines
+from easysub import get_subtitle_words, get_subtitle_lines
 
 # Specify the path to your audio file
 audio_path = "path/to/your/audio/file.mp3"
