@@ -3,10 +3,9 @@ import logging
 import whisper
 
 __all__ = [
-    "get_subtitle_words",
+    "get_subtitles",
     "get_subtitle_lines",
-    "SubtitleSection",
-    "SubtitleLine",
+    "get_words_from_segments",
 ]
 
 LOG = logging.getLogger(__name__)
