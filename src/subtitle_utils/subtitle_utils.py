@@ -51,7 +51,7 @@ def process_segments(segments: list):
 
             new_segment["words"].append(
                 {
-                    "word": format_word(word["word"]),
+                    "word": word["word"],
                     "start": word["start"],
                     "end": word["end"],
                 }
@@ -107,12 +107,6 @@ def get_subtitle_lines(
     LOG.info(f"Created {len(lines)} subtitle lines")
 
     return lines
-
-
-def format_word(word: str) -> str:
-    formatted = re.sub(r"[;,.]", "", word).upper().strip()
-    LOG.debug(f"Formatted word: '{word}' -> '{formatted}'")
-    return formatted
 
 
 def get_line(words: list, line_text: str):
