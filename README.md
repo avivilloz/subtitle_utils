@@ -40,16 +40,16 @@ pip install -r requirements.txt
 ## How to use:
 
 ```python
-from subtitle_utils import get_subtitle_words, get_subtitle_lines
+from subtitle_utils import get_subtitles, get_subtitle_lines
 
 # Specify the path to your audio file
 audio_path = "path/to/your/audio/file.mp3"
 
 # Get the subtitle sections (words)
-sections = get_subtitle_words(audio_path)
+segments = get_subtitles(audio_path)
 
 # Generate subtitle lines from the sections (optional)
-lines = get_subtitle_lines(sections, max_chars=30)
+lines = get_subtitle_lines(segments, max_chars=30)
 
 # Print the subtitle lines with their start and end times
 for line in lines:
